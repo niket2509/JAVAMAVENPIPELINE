@@ -9,7 +9,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/niket2509/JAVAMAVENPIPELINE.git']]])
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                bat '''mvn -Dmaven.test.failure.ignore=true clean package'''
             }
         }
     }
